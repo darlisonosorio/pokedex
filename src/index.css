@@ -1,3 +1,30 @@
+:root {
+  --primary: #e90200;
+  --font-color: #333333;
+  --dark-gray-color: #828282;
+  --light-gray-color:	#F2F2F2;
+  --red-color: #E2350D;
+  --white-color: #FFFFFF;
+  --fire-color: #EE7F33;
+  --normal-color: #A9A778;
+  --water-color: #6890F0;
+  --grass-color: #78C84F;
+  --ice-color: #98D8D7;
+  --poison-color: #A040A1;
+  --ground-color: #E0C069;
+  --flying-color: #A790EF;
+  --bug-color: #A8B821;
+  --rock-color: #B6A037;
+  --ghost-color: #705797;
+  --dragon-color: #724EF9;
+  --dark-color: #6F5848;
+  --steel-color: #B8B8D0;
+  --fairy-color: #F4C8E2;
+  --psychic-color: #E95587;
+  --electric-color: #F8CF32;
+  --fighting-color: #C03228;
+}
+
 body {
   margin: 0;
   font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +32,43 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 12px;
+  color: var(--font-color);
 }
 
 code {
   font-family: 'Titillium Web', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container:before,
+.container:after {
+  position: absolute;
+}
+
+.wrapper {
+  padding: 32px 0;
+}
+
+select.form-select, textarea,
+input[type="text"], input[type="password"],
+input[type="datetime"], input[type="datetime-local"],
+input[type="date"], input[type="month"],
+input[type="time"], input[type="week"],
+input[type="number"], input[type="email"],
+input[type="url"], input[type="search"],
+input[type="tel"], input[type="color"],
+.uneditable-input {
+  background-color: var(--light-gray-color);
+  border: none;
+  padding: 0 16px;
+  min-height: 40px;
+  border-radius: 24px;
+  margin: 0;
+}
+
+select.form-select {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-size: .98em;
 }
