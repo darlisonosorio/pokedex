@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import HomePage from "./Home";
+import HomePage from "./modules/Home";
 
 const Routes = () => {
   return (
