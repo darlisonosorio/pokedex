@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Sobre o Projeto POKEDEX
 
 Projeto que lista Pokemons como uma Pokédex.
+Amostra em React.js
 
 
 ## Pré requisitos
