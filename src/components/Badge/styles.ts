@@ -10,6 +10,7 @@ export const Badge = styled.div.attrs(
 ({ className }) => ({
   className: className + ' badge',
 }))<BadgeProps>`
+  cursor: pointer;
   font-size: 1em;
   height: 28px;
   line-height: 28px;

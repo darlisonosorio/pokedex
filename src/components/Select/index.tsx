@@ -1,4 +1,5 @@
 import React from 'react';
+import { Pokemon } from '../../model/Pokemon';
 
 import * as S from './styles';
 

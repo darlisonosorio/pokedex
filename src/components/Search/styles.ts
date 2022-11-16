@@ -8,8 +8,13 @@ export const Wrapper = styled.span`
 `;
 
 export const InputIcon = styled.i`
-position: absolute;
-top: 12px;
-right: 12px;
-color: var(--primary);
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: var(--primary);
+
+  &.icon-close:before {
+    font-weight: 400;
+    content: "\f00d";
+  }
 `;

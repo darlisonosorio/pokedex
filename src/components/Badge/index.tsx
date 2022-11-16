@@ -7,15 +7,17 @@ type BadgeProps = {
   color?: string;
   selected?: boolean;
   className?: string;
+  onClick?: () => void;
   style?: any;
 };
 
 const Badge = ({
   children,
+  onClick,
   ...rest
 }: BadgeProps): JSX.Element => {
   return (
-    <S.Badge {...rest}>{children}</S.Badge>
+    <S.Badge onClick={onClick} {...rest}>{children}</S.Badge>
   );
 };
 

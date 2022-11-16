@@ -36,7 +36,7 @@ const Search = ({
       />
       {value && value.length ? (
         <S.InputIcon
-          className="icon-ban-circle icon-large"
+          className="icon-close icon-large"
           onClick={clearSearch}
         />
       ): (
