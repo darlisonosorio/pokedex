@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Routes as Switch,
   Route,
-  Link
 } from "react-router-dom";
 import HomePage from "./modules/Home";
 

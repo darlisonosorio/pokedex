@@ -72,3 +72,12 @@ select.form-select {
   color: var(--primary);
   font-size: .98em;
 }
+
+.form-check .form-check-input {
+  margin-left: -2em;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}

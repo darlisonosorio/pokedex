@@ -10,13 +10,14 @@ type PProps = {
 
 const sizes = {
   'body': '1em',
-  'subtitle': '1.4em',
+  'subtitle': '1.3em',
   'header': '2em',
 };
 
 export const P = styled.p<PProps>`
   margin: 0;
   font-size: ${({ variant }) => sizes[variant]};
+  font-weight: ${({ variant }) => variant === 'body' ? '400' : '600' };
   color: ${({ color }) => color ?? 'var(--text-color)'};
   width: ${({ fullWidth }) => fullWidth ? '100%' : 'auto'};
 `;
