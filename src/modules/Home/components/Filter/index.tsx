@@ -1,6 +1,8 @@
 import React, { FC, useState } from 'react';
+import Badge from '../../../../components/Badge';
 import Search from '../../../../components/Search';
 import Select, { SelectOption } from '../../../../components/Select';
+import Typography from '../../../../components/Typography';
 
 import * as S from './styles';
 
@@ -18,6 +20,10 @@ const OrderOptions: SelectOption[] = [
 const Filter: FC<FilterProps> = ({ children }) => {
   const [ search, setSearch ] = useState('');
   const [ order, setOrder ] = useState(OrderOptions[0].value);
+  const [ favorites, setFavorites] = useState(false);
+  const tags = [
+    'Bug', 'Dark', 'Dragon', 'Eletric', 'Fairy', 'Fighter', 'Fire', 'Flying',
+  ];
 
   const changeSearch = (val: string) => {
     // TODO: modify list
@@ -28,6 +34,10 @@ const Filter: FC<FilterProps> = ({ children }) => {
     // TODO: modify list
     setOrder(val);
   };
+
+  const changeFavorites = (val: any) => {
+    setFavorites(val);
+  }
 
   return (
     <main className="wrapper container">
@@ -48,7 +58,31 @@ const Filter: FC<FilterProps> = ({ children }) => {
           />
         </S.FilterContent>
       </S.HeaderFilter>
-      {children}
+
+      <S.SideContent>
+        <S.SideFilter>
+          <Typography fullWidth>Filtrar por Tipo</Typography>
+          <S.Tags>
+            {tags.map(it => (
+              <Badge key={it} >{it}</Badge>
+            ))}
+          </S.Tags>
+
+          <Typography fullWidth>Filtrar Favoritos</Typography>
+          <div className="form-check form-switch">
+            <input
+              type="checkbox"
+              checked={favorites}
+              onChange={() => changeFavorites(!favorites)}
+              className="form-check-input"
+              role="switch"
+            />
+          </div>
+        </S.SideFilter>
+
+        {children}
+
+      </S.SideContent>
     </main>
   );
 };

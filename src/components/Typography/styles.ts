@@ -4,6 +4,7 @@ export type TypographyVariant = 'body' | 'subtitle' | 'header';
 
 type PProps = {
   variant: TypographyVariant;
+  fullWidth?: boolean;
   color?: string;
 }
 
@@ -16,5 +17,6 @@ const sizes = {
 export const P = styled.p<PProps>`
   margin: 0;
   font-size: ${({ variant }) => sizes[variant]};
-  color: ${({ color }) => color ?? 'var(--text-color)'}; 
+  color: ${({ color }) => color ?? 'var(--text-color)'};
+  width: ${({ fullWidth }) => fullWidth ? '100%' : 'auto'};
 `;

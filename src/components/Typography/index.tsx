@@ -7,6 +7,7 @@ type TypographyProps = {
   variant?: TypographyVariant;
   color?: string;
   className?: string; 
+  fullWidth?: boolean;
   style?: any;
 }
 
