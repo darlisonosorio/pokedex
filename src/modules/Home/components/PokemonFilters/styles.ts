@@ -24,8 +24,26 @@ export const SideContent = styled.section`
   flex-direction: row;
 `;
 
+export const ListContent = styled.section`
+  overflow: overlay;
+  max-height: calc(100vh - 215px);
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 4px;
+  }
+
+`;
+
 export const SideFilter = styled.div`
-  width: 180px;
 `;
 
 export const Tags = styled.div`
@@ -34,4 +52,10 @@ export const Tags = styled.div`
   flex-wrap: wrap;
   gap: 8px;
   margin: 24px 0;
-`
+`;
+
+export const Switch = styled.input.attrs({
+  type: 'checkbox',
+  role: 'switch',
+  className: 'form-check-input',
+})``;
