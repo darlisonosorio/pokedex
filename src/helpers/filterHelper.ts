@@ -3,18 +3,12 @@ import { PokemonTypeEnum } from "../model/PokemonTypeEnum";
 
 export type CompareMethod = (a: Pokemon, b: Pokemon) => any;
 
-const compareMethods = (order: any): CompareMethod => {
-  switch(order) {
-    case'2': 
-      return (a: Pokemon, b: Pokemon) => a.national_number.localeCompare(b.national_number);
-    case '3':
-      return (a: Pokemon, b: Pokemon) => b.name.localeCompare(a.name);
-    case '4':
-      return (a: Pokemon, b: Pokemon) => a.name.localeCompare(b.name);
-    default:
-      return (a: Pokemon, b: Pokemon) => b.national_number.localeCompare(a.national_number);
-  }
-};
+const compareMethods:Map<String, CompareMethod> = new Map([
+  ['1', (a: Pokemon, b: Pokemon) => a.national_number.localeCompare(b.national_number) ],
+  ['2', (a: Pokemon, b: Pokemon) => b.national_number.localeCompare(a.national_number) ],
+  ['3', (a: Pokemon, b: Pokemon) => a.name.localeCompare(b.name) ],
+  ['4', (a: Pokemon, b: Pokemon) => b.name.localeCompare(a.name) ],
+]);
 
 
 export const filterPokemons = (
@@ -41,9 +35,6 @@ export const filterPokemons = (
     );
   }
 
-  const filtered = filters.length
-    ? data.filter(it => filters.every(filter => filter(it)))
-    : data;
-  
-  return filtered.sort(compareMethods(order));
+  const filtered = data.filter(it => filters ? filters.every(filter => filter(it)) : true);
+  return filtered.sort(compareMethods.get(order));
 };
